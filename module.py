@@ -196,7 +196,7 @@ class RobustAgg:
                     Y_a += self.m_players[p].arm_rewards[a]
             n = self.m_players[curr_player].arm_sample_count[a]
             X_a = self.m_players[curr_player].arm_rewards[a]
-            n = max(n, 1)
+            n = max(n, 1) # with an initialization phase, the right-hand side would always equal to n
             m_other_players = max(m_other_players, 1)
             alpha, ucb = self.BestWeightedUCB(n, m_other_players, X_a, Y_a, self.m_epsilon)
             self.m_players[curr_player].upper_confidence_bounds[a] = ucb
@@ -231,6 +231,12 @@ class RobustAgg:
                                                     self.m_players[p].ground_truth_means[curr_arm]
             self.m_players[p].pseudoregret_history.append(self.m_players[p].total_pseudoregret)
 
+        for p in range(self.m_num_players):
+            self.UpdateConfidenceBounds(p)
+    
+    def InitilizationPhase(self):
+        for player in self.m_players:
+            player.SampleOnce()
         for p in range(self.m_num_players):
             self.UpdateConfidenceBounds(p)
 

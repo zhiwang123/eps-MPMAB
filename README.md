@@ -14,7 +14,10 @@ Code written by: Manish Kumar Singh and Zhi Wang.
 
 ###### Remarks:
 The code can be used to reproduce the two experiments in the paper.
-A detailed description of the experimental setup can be found in the paper.
+A detailed description of the experimental setup can be found in the appendix
+(in this Python implementation, we simplified RobustAgg-Adapted by obviating the 
+needs for an initialization phase in which each player pulls each arm once, but one 
+can easily add it using the `RobustAgg.InitializationPhase()` function in `module.py`).
 Please first create two folders `data/` and `plots/`, 
 to which data and plots will be saved, respectively.
 
