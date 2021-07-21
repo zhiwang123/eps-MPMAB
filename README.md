@@ -1,6 +1,6 @@
 ### Multitask Bandit Learning Through Heterogeneous Feedback Aggregation
 
-AISTATS 2021 paper: http://proceedings.mlr.press/v130/wang21e.html
+AISTATS 2021 paper: https://arxiv.org/abs/2010.15390
 
 Authors: Zhi Wang*, Chicheng Zhang*, Manish Kumar Singh, 
 Laurel D. Riek, and Kamalika Chaudhuri.
@@ -14,10 +14,7 @@ Code written by: Manish Kumar Singh and Zhi Wang.
 
 ###### Remarks:
 The code can be used to reproduce the two experiments in the paper.
-A detailed description of the experimental setup can be found in the appendix
-(in this Python implementation, we simplified RobustAgg-Adapted by obviating the 
-needs for an initialization phase in which each player pulls each arm once, but one 
-can easily add it using the `RobustAgg.InitializationPhase()` function in `module.py`).
+A detailed description of the experimental setup can be found in the appendix.
 Please first create two folders `data/` and `plots/`, 
 to which data and plots will be saved, respectively.
 
